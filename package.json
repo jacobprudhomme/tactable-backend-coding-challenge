@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "typescript": "^4.5.5",
+    "xo": "^0.47.0"
+  },
+  "scripts": {
+    "lint": "xo"
+  }
+}
