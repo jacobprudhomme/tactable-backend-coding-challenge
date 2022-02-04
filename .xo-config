@@ -2,6 +2,20 @@
   "envs": ["es2020", "node"],
   "space": true,
   "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-unassigned-import": [
+      "warn",
+      {
+        "allow": ["reflect-metadata"]
+      }
+    ],
     "@typescript-eslint/naming-convention": [
       "error",
       {
@@ -9,6 +23,10 @@
         "format": ["StrictPascalCase"],
         "prefix": ["I"]
       }
+    ],
+    "@typescript-eslint/object-curly-spacing": [
+      "warn",
+      "always"
     ]
   }
 }
