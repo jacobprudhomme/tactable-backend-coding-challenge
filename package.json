@@ -9,6 +9,7 @@
     "xo": "^0.47.0"
   },
   "scripts": {
+    "build": "tsc",
     "lint": "xo"
   }
 }
