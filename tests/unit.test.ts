@@ -1,7 +1,6 @@
 import nock from 'nock';
 
 import { TodoClient } from '../src/classes';
-import type { Todo } from '../src/types';
 
 import { todos } from './data';
 
@@ -15,7 +14,7 @@ describe('TodoClient', () => {
 
   describe('getTodos()', () => {
     it('should call the correct URL to fetch a list of todos', async () => {
-      const result: Todo[] = await todoClient.getTodos();
+      const result = await todoClient.getTodos();
 
       expect(result).toEqual(todos);
     });
