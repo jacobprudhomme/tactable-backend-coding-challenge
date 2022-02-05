@@ -9,7 +9,7 @@ import type { Todo } from './types';
 export class TodoClient {
   private readonly resourceUrl = 'https://jsonplaceholder.typicode.com/todos';
 
-  async getTodos(): Promise<Todo[]> {
+  async getTodos() {
     const todos: Todo[] = await got(this.resourceUrl).json();
     return todos;
   }
@@ -23,7 +23,7 @@ export class ApiManager implements IApiManager<Todo[]> {
     this.todoClient = todoClient;
   }
 
-  async fetchData(): Promise<Todo[]> {
+  async fetchData() {
     return this.todoClient.getTodos();
   }
 }
