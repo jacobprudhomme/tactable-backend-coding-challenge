@@ -2,7 +2,8 @@ import got from 'got';
 import { inject, injectable } from 'inversify';
 
 import { IApiManager } from './interfaces';
-import { Todo } from './types';
+import SYMBOLS from './symbols';
+import type { Todo } from './types';
 
 @injectable()
 export class TodoClient {
@@ -18,7 +19,7 @@ export class TodoClient {
 export class ApiManager implements IApiManager<Todo[]> {
   private readonly todoClient: TodoClient;
 
-  constructor(@inject(TodoClient) todoClient: TodoClient) {
+  constructor(@inject(SYMBOLS.TodoClient) todoClient: TodoClient) {
     this.todoClient = todoClient;
   }
 
