@@ -16,6 +16,10 @@
         "allow": ["reflect-metadata"]
       }
     ],
+    "@typescript-eslint/class-literal-property-style": [
+      "warn",
+      "fields"
+    ],
     "@typescript-eslint/naming-convention": [
       "error",
       {

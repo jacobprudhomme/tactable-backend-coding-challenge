@@ -6,23 +6,23 @@ import { Todo } from './types';
 
 @injectable()
 export class TodoClient {
-  _resourceUrl = 'https://jsonplaceholder.typicode.com/todos';
+  private readonly resourceUrl = 'https://jsonplaceholder.typicode.com/todos';
 
   async getTodos(): Promise<Todo[]> {
-    const todos: Todo[] = await got(this._resourceUrl).json();
+    const todos: Todo[] = await got(this.resourceUrl).json();
     return todos;
   }
 }
 
 @injectable()
 export class ApiManager implements IApiManager<Todo[]> {
-  _todoClient: TodoClient;
+  private readonly todoClient: TodoClient;
 
   constructor(@inject(TodoClient) todoClient: TodoClient) {
-    this._todoClient = todoClient;
+    this.todoClient = todoClient;
   }
 
   async fetchData(): Promise<Todo[]> {
-    return this._todoClient.getTodos();
+    return this.todoClient.getTodos();
   }
 }
