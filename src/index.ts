@@ -8,5 +8,5 @@ import SYMBOLS from './symbols';
   const apiManager = container.get<ApiManager>(SYMBOLS.ApiManager);
   const todos = await apiManager.fetchData();
 
-  console.log('Here is the first todo from the received data:', todos[0]);
+  console.log('Here is the first todo from the received data:', todos);
 })();
